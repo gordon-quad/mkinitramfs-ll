@@ -1,0 +1,13 @@
+#!/bin/sh
+
+for f in /sys/bus/pci/devices/*;
+do
+        CLASS=$(cat ${f}/class)
+        if [ "${CLASS}" == "0x010802" ];
+        then
+                echo 1 >${f}/remove
+                sleep 0.1
+                echo 1 >/sys/bus/pci/rescan
+                sleep 0.1
+        fi
+done

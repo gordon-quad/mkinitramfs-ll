@@ -22,6 +22,7 @@ dist_EXTRA  = \
 	README.md \
 	ChangeLog
 dist_HOOKS  = \
+	2-rescan-nvmes \
 	bcache \
 	disable-bcache \
 	btrfs \
